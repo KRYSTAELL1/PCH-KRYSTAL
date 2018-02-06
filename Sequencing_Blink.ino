@@ -24,7 +24,7 @@ void loop() {
   
   if (buttonState == HIGH) {
   digitalWrite(LED1, HIGH);    // turn on LED1 
-  delay(4000);                  // wait for 200ms
+ // delay(4000);                  // delete this for two LED to turn on
   digitalWrite(LED5, HIGH);    // turn on LED1 
   delay(4000);                  // wait for 200ms 
   digitalWrite(LED2, HIGH);    // turn on LED2
@@ -33,7 +33,19 @@ void loop() {
   delay(2000);                  // wait for 200ms    
   digitalWrite(LED3, HIGH);    // turn on LED3 
   delay(1000);                  // wait for 200ms
+
+    digitalWrite(LED3, LOW);     // turn off LED1
+      delay(1000);                         
+  digitalWrite(LED2, LOW);     // turn off LED3
+      delay(1000);                
+  digitalWrite(LED4, LOW);     // turn off LED1
+     //  delay(1000);        
+   digitalWrite(LED1, LOW);     // turn off LED1
+        delay(1000);         
+   digitalWrite(LED5, LOW);     // turn off LED2
+     delay(1000); 
   } else {
+    //when you dont touch the button
   
   digitalWrite(LED3, LOW);     // turn off LED1
                             
