@@ -1,4 +1,4 @@
-/*KRYSTAL_Sequencing Blink with Button*/ 
+/*KRYSTAL_2_Pattern_Sequencing Blink with Button*/ 
 
 const int buttonPin = 7; 
 int buttonState = 0;   
