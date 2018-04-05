@@ -1,0 +1,52 @@
+//test motors w serial.write'a' etc
+
+//motor
+#include <Servo.h> 
+
+//FSR sensors
+int sensorPin = 1; //sensors hooked up to analog pin #
+
+int val = 0; //fsr values put into val
+int reducedVal=0;
+
+
+//motor inputs
+int servoPin = 9; //motor hooked up to digital pin 9
+int servoPin2 = 8;
+int servoPin3 = 10;
+Servo servo;
+Servo servo2;
+Servo servo3;
+int angle = 0; //motor x position (degrees)
+int stopangle = 90; //motor rest position (degrees)
+
+void setup() {
+  servo.attach(servoPin); //motor
+  servo2.attach(servoPin2); //motor
+servo3.attach(servoPin3); 
+Serial.begin(9600); // Start serial communication at 9600 bps
+}
+
+void loop() {
+val = analogRead(sensorPin); //read sensor and assign to variable called val
+reducedVal= int(val/4);
+
+if (reducedVal > 200){ //
+  //Serial.write('a');
+  for(angle = 0; angle > 180; angle++){
+  servo.write(angle); //motor moves fwd
+  servo2.write(angle); //motor moves fwd
+  servo3.write(angle); //motor moves fwd
+  //delay(5);//speed of motor
+  }
+  for(angle = 180; angle > 0; angle--){ //motor moves bwd                                
+  servo.write(angle); 
+  servo2.write(angle);
+  servo3.write(angle);
+  } 
+  servo.write(stopangle); //then stops  
+} else {
+ // Serial.write('z');
+}
+Serial.println(reducedVal);
+}
