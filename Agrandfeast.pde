@@ -1,0 +1,59 @@
+import processing.serial.*; //serial communication
+import ddf.minim.*;
+
+Serial myPort;
+char val; //flex sensor vals from arduino
+
+Minim minim; //audio objs
+AudioPlayer girl;
+AudioPlayer water;
+
+//int i; //audio files increment
+
+void setup(){
+  size(200,200);
+  
+  //serial communication w arduino
+  printArray(Serial.list());
+  String portName = Serial.list()[7]; //change port #
+  myPort = new Serial(this, portName, 9600);
+  
+  //load audio
+  minim = new Minim(this);
+  girl = minim.loadFile("Sea_girl6.mp3");
+  water = minim.loadFile("bubblingwater-2.mp3");
+   water.play();
+  water.loop();
+  
+  //wii.loop();
+  
+  //for(int i = 0; i < leaf
+}
+
+
+void draw(){
+  if ( myPort.available() > 0) { // If data is available,
+  val = myPort.readChar(); // read it and store it in val
+  }
+  
+  if (val == 'a'){
+    girl.play();
+    girl.rewind(); 
+   // girl.loop();
+  }
+  
+  if (val == 'z'){
+    
+
+  }
+  
+ 
+println(val);
+}
+
+void stop(){
+  water.close();
+ //girl.close();
+  //minim.stop();
+  
+}
