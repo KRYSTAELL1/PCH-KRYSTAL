@@ -1,4 +1,4 @@
-// Reads analogue sensor and writes value to the serial port
+// Analogue_Input.ino Reads analogue sensor and writes value to the serial port
 
 int sensorPin = 0; //sensor hooked up to analog pin 0
 int val = 0;
