@@ -1,4 +1,4 @@
-/*
+/* Legs.pde
 Reads values from serial port, written to the port by Arduino.
 The size of an ellipse changes according to the serial values.
 Must assign the correct port, see instructions below.
