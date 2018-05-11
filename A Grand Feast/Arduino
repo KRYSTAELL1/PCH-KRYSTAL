@@ -1,4 +1,4 @@
-//test motors w serial.write'a' etc
+//SEA_GIRL_FINALexta.ino, test motors w serial.write'a' etc
 
 //motor
 #include <Servo.h> 
